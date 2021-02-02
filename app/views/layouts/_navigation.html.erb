@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> </title>
+  <title>  </title>
 </head>
 <body>
   <nav class="navbar navbar-inverse">
@@ -15,20 +15,14 @@
         <li><%= link_to 'Home', root_path %></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
-        <% if user_signed_in? %>
-          <li class="dropdown">
-            <button class="dropdown-toggle" type="button" data-toggle="dropdown">
-              <%= current_user.name %>
-              <span class="caret"></span>            
-            <ul class="dropdown-menu" role="menu">
-              <li><%= link_to 'Profile', edit_user_registration_path %></li>
-              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </li>
-        <% else %>
+        <% if user_signed_in? %>          
+          <%= current_user.name %>        
+          <li><%= link_to 'Profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>       
+        <% elsif %>          
           <li><%= link_to 'Log In', new_user_session_path %></li>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <% end %>
+        <% end %> 
       </ul>
     </div>
   </div>
