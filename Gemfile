@@ -13,6 +13,10 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'activeadmin'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
