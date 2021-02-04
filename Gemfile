@@ -11,6 +11,9 @@ gem 'carrierwave'
 gem "rmagick"
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'geocoder'
+gem 'gmaps4rails'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets

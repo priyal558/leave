@@ -1,77 +1,102 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>  
-  input[type=text], input[type=password], input[type=email] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  }
-  .container {
-  padding: 16px;  
-  width: 500px;  
-  }
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    
-    width: 100%;
-  }
-  </style>
-  <title>
-    Registeration form
-  </title>
-</head>
+  <head>
+    <style>  
+      input[type=text], input[type=password], input[type=email] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      .new_form_container {
+      padding: 16px;  
+      width: 500px;  
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;        
+        width: 100%;
+      }
+    </style>
+    <title>
+      Registeration form
+    </title>
+  </head>
 <body>
-  <div class="container">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
+  <div class="container new_form_container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %> <br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :mobile_number %><br />
+      <%= f.text_field :mobile_number , autofocus:true %>      
+    </div>
+    <div>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>    
+    <%= f.fields_for :address_attributes, resource.address do |form| %>
+      <div class="field">
+        <%= form.label :street %><br />
+        <%= form.text_field :street, autofocus: true %>
+      </div>
 
       <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true %>
+        <%= form.label :city %><br />
+        <%= form.text_field :city, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+       <%= form.label :pin_code %><br />
+       <%= form.text_field :pin_code, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+        <%= form.label :state %><br />
+        <%= form.text_field :state, autofocus: true %>
+      </div>   
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :mobile_number %><br />
-        <%= f.text_field :mobile_number , autofocus:true %>      
-      </div>
-
-      <div>
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
+        <%= form.label :country %><br />
+        <%= form.text_field :country, autofocus: true %>
+      </div>     
     <% end %>
-    <%= render "users/shared/links" %>
+  <div id="googleMap" style="width:100%;height:150px;"></div><br/>
+ 
+  <div class="actions">
+    <%= f.submit "Sign up" %>
   </div>
+  <%= render "users/shared/links" %>
+  <% end %>
+  </div> 
 </body>
 </html>
 

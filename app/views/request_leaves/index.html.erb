@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+   Leave Request
+  </title>
+</head>
+<body>
+	<div class="container">
+		<h3>Apply for leave</h3>    
+		<%= form_with model: RequestLeave.new do |form| %>
+		  <div  class="form-group">
+		    <p>
+			    <b>Leave Type</b><br />
+			    <%= form.radio_button :leave_type, 'Casual Leave' %> Casual Leave<br />
+			    <%= form.radio_button :leave_type, 'Maternity Leave' %> Maternity Leave<br />
+			    <%= form.radio_button :leave_type, 'Parental leave' %> Parental leave<br />
+			    <%= form.radio_button :leave_type, 'Leave Without Pay' %> Leave Without Pay<br/>
+				</p>
+		  </div>
+
+		  <div>
+		    <%= form.label :description %><br>
+		    <%= form.text_area :description %><br>      
+		  </div>
+		  		  
+		  <div>
+		    <%= form.submit %>
+		  </div>
+		<% end %>		
+	</div>
+</body>
+</html>

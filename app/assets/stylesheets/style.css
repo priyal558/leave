@@ -7,6 +7,7 @@
     height: 150px;
     border-radius: 50%;
   }
+  
   input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 12px 20px;
@@ -16,7 +17,8 @@
   box-sizing: border-box;
   }
 
-  .container {
+
+  .edit-profile-container {
   padding: 16px;  
   width: 500px;
   background-color:#f1f1f1;

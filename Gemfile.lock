@@ -100,8 +100,10 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.14.2)
+    geocoder (1.6.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     i18n (1.8.8)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -243,6 +245,8 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   devise
+  geocoder
+  gmaps4rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)

@@ -1,41 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    .imgcontainer {
-    text-align:center;
-    margin: 24px 0 12px 0;
-    background-color:#f1f1f1;
-    }
-  img.avatar {
-    width: 40%;
-    height: 150px;
-    border-radius: 50%;
-  }
-  input[type=text], input[type=password], input[type=email] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  }
-
-  .edit-profile-container {
-  padding: 16px;  
-  width: 500px;  
-  }
-
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    
-    width: 100%;
-  }
-  </style>
+  
   <title></title>
 </head>
 <body>   
@@ -97,6 +63,8 @@
     <% end %>
     <%= link_to "Back", :back %>
   </div>
+
+  <%= @user.address.address %>
 </body>
 </html>
 

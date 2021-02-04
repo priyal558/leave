@@ -10,11 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_113930) do
+ActiveRecord::Schema.define(version: 2021_02_04_102328) do
 
   create_table "addresses", force: :cascade do |t|
+    t.string "addressable_type"
+    t.integer "addressable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "street"
+    t.string "state"
+    t.string "city"
+    t.integer "pin_code"
+    t.string "country"
+    t.string "address"
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
+  end
+
+  create_table "request_leaves", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "leave_type"
+    t.string "description"
+    t.integer "status", default: 0, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_request_leaves_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
