@@ -17,6 +17,8 @@ gem 'activeadmin'
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
+gem 'enumerize'
+gem 'activeadmin_addons'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'

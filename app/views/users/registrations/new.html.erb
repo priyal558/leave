@@ -59,10 +59,18 @@
       <%= f.label :mobile_number %><br />
       <%= f.text_field :mobile_number , autofocus:true %>      
     </div>
+
+    <div  class="field">        
+      <%= f.label :Gender %><br />
+      <%= f.radio_button :gender, 'Male' %> Male<br />
+      <%= f.radio_button :gender, 'Female' %> Female<br /> 
+    </div><br />
+
     <div>
       <%= f.label :image %>
       <%= f.file_field :image %>
-    </div>    
+    </div> <br />
+
     <%= f.fields_for :address_attributes, resource.address do |form| %>
       <div class="field">
         <%= form.label :street %><br />
@@ -88,8 +96,7 @@
         <%= form.label :country %><br />
         <%= form.text_field :country, autofocus: true %>
       </div>     
-    <% end %>
-  <div id="googleMap" style="width:100%;height:150px;"></div><br/>
+    <% end %> 
  
   <div class="actions">
     <%= f.submit "Sign up" %>

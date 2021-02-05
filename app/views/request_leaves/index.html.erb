@@ -6,6 +6,8 @@
   </title>
 </head>
 <body>
+	
+	<% if user_signed_in? %>	
 	<div class="container">
 		<h3>Apply for leave</h3>    
 		<%= form_with model: RequestLeave.new do |form| %>
@@ -29,5 +31,6 @@
 		  </div>
 		<% end %>		
 	</div>
+	<% end %>	
 </body>
 </html>

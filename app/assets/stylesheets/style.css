@@ -18,10 +18,14 @@
   }
 
 
-  .edit-profile-container {
+  /*.edit-profile-container {
   padding: 16px;  
   width: 500px;
   background-color:#f1f1f1;
+  }*/
+  .edit-profile {
+    padding: 10px;
+    background: lightgray;
   }
   button {
     background-color: #4CAF50;

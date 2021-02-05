@@ -44,19 +44,26 @@
 		<th>
 			status
 		</th>		
+		<th>
+			Action
+		</th>	
 	</tr>
-	<tr>
-		<td>
-			<%= @request.leave_type%>
-		</td>
-		<td>
-			<%= @request.description%>
-		</td>		
-		<td>
-			<%= @request.status %>
- 		</td>		
-	</tr> 	
-	
+	 	<% @leave.all.each do |request| %> 
+			<tr>
+				<td>
+					<%= request.leave_type%>
+				</td>
+				<td>
+					<%= request.description%>
+				</td>		
+				<td>
+					<%= request.status %>
+		 		</td>	
+		 		<td>
+		 			<%= link_to 'Show' , request_leave_path(request)  %>
+		 		</td>	
+			</tr> 
+		<% end %>			
 	</table>    
 </div>
 </body>
